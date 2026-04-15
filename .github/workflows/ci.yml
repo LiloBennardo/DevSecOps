@@ -53,7 +53,7 @@ jobs:
         run: docker build -t flask-api:ci .
 
       - name: Trivy - scan dependencies (filesystem)
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           scan-type: fs
           scan-ref: .
@@ -62,7 +62,7 @@ jobs:
           exit-code: '0'
 
       - name: Trivy - scan Docker image
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: flask-api:ci
           format: table
@@ -71,7 +71,7 @@ jobs:
           ignore-unfixed: true
 
       - name: Trivy - scan image (SARIF for Security tab)
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: flask-api:ci
           format: sarif
