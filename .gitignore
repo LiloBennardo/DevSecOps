@@ -4,3 +4,8 @@ __pycache__/
 venv/
 .env
 *.sarif
+.claude/
+*.docx
+*.pdf
+build_rapport.js
+node_modules/
